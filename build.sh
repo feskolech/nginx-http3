@@ -1,4 +1,5 @@
 set -e
+rm -rf /github/home/kek
 mkdir /github/home/kek/
 cd /github/home/kek/
 echo Install dependencies.
