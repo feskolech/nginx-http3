@@ -21,12 +21,9 @@ apt-get build-dep --allow-change-held-packages --allow-downgrades --allow-remove
 nginx > /dev/null 2>&1
 echo Fetch nginx and nginx-quic source code.
 ls -la
-rm -rf nginx/* || true 
-ls 
-pwd
-echo kek
+rm -rf nginx-quic
 apt-get source nginx > /dev/null 2>&1
-mv nginx-* nginx
+mv nginx-1.23.3 nginx
 hg clone -b quic https://hg.nginx.org/nginx-quic > /dev/null 2>&1
 rsync -r nginx-quic/ nginx > /dev/null 2>&1
 cd nginx
