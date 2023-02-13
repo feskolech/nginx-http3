@@ -20,6 +20,10 @@ apt-get build-dep --allow-change-held-packages --allow-downgrades --allow-remove
 -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold -fy \
 nginx > /dev/null 2>&1
 echo Fetch nginx and nginx-quic source code.
+rm -rf nginx || true 
+ls 
+pwd
+echo kek
 apt-get source nginx > /dev/null 2>&1
 mv nginx-* nginx
 hg clone -b quic https://hg.nginx.org/nginx-quic > /dev/null 2>&1
