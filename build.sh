@@ -1,5 +1,4 @@
 set -e
-mkdir /github/home
 cd /github/home
 echo Install dependencies.
 echo deb http://deb.debian.org/debian bullseye-backports main >> /etc/apt/sources.list
