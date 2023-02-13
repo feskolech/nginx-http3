@@ -1,5 +1,6 @@
 set -e
-cd /github/home
+mkdir /github/home/kek/
+cd /github/home/kek/
 echo Install dependencies.
 echo deb http://deb.debian.org/debian bullseye-backports main >> /etc/apt/sources.list
 apt-get update > /dev/null 2>&1
@@ -21,7 +22,7 @@ apt-get build-dep --allow-change-held-packages --allow-downgrades --allow-remove
 nginx > /dev/null 2>&1
 echo Fetch nginx and nginx-quic source code.
 ls -la
-rm -rf nginx-quic
+#rm -rf nginx-quic
 apt-get source nginx > /dev/null 2>&1
 mv nginx-1.23.3 nginx
 hg clone -b quic https://hg.nginx.org/nginx-quic > /dev/null 2>&1
@@ -34,6 +35,8 @@ mkdir debian/modules
 cd debian/modules
 git clone --depth 1 https://github.com/google/boringssl > /dev/null 2>&1
 echo Build boringssl.
+ls -la
+pwd
 mkdir boringssl/build
 cd boringssl/build
 cmake -GNinja .. > /dev/null 2>&1
